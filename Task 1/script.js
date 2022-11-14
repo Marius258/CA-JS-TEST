@@ -8,3 +8,53 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: rezultatas turi būti matomas pateikus formą ir atvaizduojamas
 <div id="output"></div> viduje. Gautus atsakymus stilizuokite naudojant CSS;
 ------------------------------------------------------------------- */
+
+const form = document.querySelector('form')
+const display = document.querySelector('#output')
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const inputValue = parseInt(document.querySelector('#search').value)
+
+  if (isNaN(inputValue)) {
+    alert('Please type a valid input')
+    return
+  }
+
+  clearChildrenOfNode(display)
+
+  displayAndConvertWeight(inputValue, 'Pounds', kgToPounds)
+  displayAndConvertWeight(inputValue, 'Grams', kgToGrams)
+  displayAndConvertWeight(inputValue, 'Ounces', kgToOunces)
+})
+
+const displayAndConvertWeight = (kg, unitName, callback) => {
+  const wrapper = document.createElement('div')
+
+  const unitHeading = document.createElement('p')
+  unitHeading.textContent = unitName
+  const valueDisplay = document.createElement('p')
+  valueDisplay.textContent = callback(kg)
+
+  wrapper.append(unitHeading, valueDisplay)
+  display.append(wrapper)
+}
+
+const clearChildrenOfNode = (node) => {
+  while (node.firstChild) {
+    node.removeChild(node.lastChild)
+  }
+}
+
+const kgToPounds = (kg) => {
+  return kg * 2.2046
+}
+
+const kgToGrams = (kg) => {
+  return kg / 0.001
+}
+
+const kgToOunces = (kg) => {
+  return kg * 35.274
+}

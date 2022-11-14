@@ -52,6 +52,26 @@ form {
   color: #fff;
 }
 
+#output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#output > * :first-child {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#output > * :last-child {
+  font-size: 1.5rem;
+}
+
+#output > * {
+  text-align: center;
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .headline {
@@ -61,5 +81,13 @@ form {
   #search,
   #submit-btn {
     font-size: 2em;
+  }
+  #output > * :first-child {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  #output > * :last-child {
+    font-size: 2rem;
   }
 }
