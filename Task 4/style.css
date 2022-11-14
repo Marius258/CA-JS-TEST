@@ -24,6 +24,50 @@
 }
 
 .container h1 {
-  margin-top: 50px;
+  margin-block: 50px;
   color: #333;
+}
+
+#output {
+  width: 80vw;
+  display: column;
+  columns: 1;
+}
+
+#output > div {
+  background-color: #111827;
+  color: #f1f5f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  break-inside: avoid;
+}
+
+#output > div p {
+  font-size: 1.5rem;
+  color: #93c5fd;
+  margin-bottom: 1rem;
+}
+
+#output > div ul {
+  list-style: none;
+  line-height: 1.25rem;
+}
+
+@media only screen and (min-width: 600px) {
+  #output {
+    columns: 2;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #output {
+    columns: 3;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #output {
+    columns: 4;
+  }
 }
