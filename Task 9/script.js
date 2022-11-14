@@ -30,4 +30,3 @@ const piratesOfTheCaribbean = new Movie(
 
 console.log(lordOfTheRings.wasExpensive())
 console.log(piratesOfTheCaribbean.wasExpensive())
-console.log(piratesOfTheCaribbean)
