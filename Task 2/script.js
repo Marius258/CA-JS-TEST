@@ -6,11 +6,6 @@ pusėje esančiame "state" skaičiavimo bloke (<div id="btn__state">0</div>)
 const btn = document.querySelector('#btn__element')
 const display = document.querySelector('#btn__state')
 
-//   const setCounter = (count) => {
-//     counter = count
-//     display.textContent = counter
-//   }
-
 const setupCounter = (btn, display) => {
   let counter = 0
   const setCounter = (count) => {

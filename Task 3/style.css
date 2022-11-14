@@ -40,7 +40,7 @@
   opacity: 0.9;
 }
 
-.output-cointainer {
+.output-container {
   width: 100%;
   margin: 25px 0;
   display: flex;
@@ -48,14 +48,37 @@
   align-items: center;
 }
 
-.output-cointainer h1 {
+.output-container h1 {
   color: #fff;
 }
 
-.output-cointainer #output {
+.output-container #output {
   width: 80%;
   margin-top: 25px;
   padding: 30px;
   border-radius: 5px;
   background-color: #fff;
+}
+
+#output {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+}
+
+#output .card {
+  background-color: #1e293b;
+  padding: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 100%;
+  aspect-ratio: 1 /1;
+  object-fit: cover;
 }
